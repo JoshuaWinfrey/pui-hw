@@ -20,20 +20,24 @@ hr{
 
 #title{
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .headers{
     text-align: center;
     padding: 10px;
+}
+a{
     text-decoration: none;
     color: black;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #productGalleryTitle{
     text-align: center;
     margin-top: 40px;
     font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .galleryBox{
@@ -52,4 +56,6 @@ hr{
 .bunsText{
     text-align: left;
     margin-top: 5px;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
