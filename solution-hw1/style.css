@@ -100,3 +100,13 @@ a:hover{
     font-size: 35px;
     width: 400px;
 }
+
+.addToCart{
+    padding-top: 25px;
+}
+
+#addToCartButton{
+    background-color: yellow;
+    display: inline;
+    text-align: right;
+}
