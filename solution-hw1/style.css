@@ -5,6 +5,10 @@ hr{
     max-width: 1200px;
 }
 
+#title{
+    text-align: center;
+    font-size: 30px;
+}
 
 .logo{
     margin: auto;
@@ -19,20 +23,10 @@ hr{
     max-width: 400px;
 }
 
-#title{
-    text-align: center;
-    font-size: 30px;
-}
-
 .headers{
     text-align: center;
     padding: 10px;
     font-size: 26px;
-}
-a{
-    text-decoration: none;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 #productGalleryTitle{
@@ -44,27 +38,65 @@ a{
 
 .galleryBox{
     text-align: center;
-    max-width: 406px;
+    max-width: 400px;
     margin: auto;
 }
 
 .galleryImages{
     margin-top: 30px;
+    text-align: left;
+    display: block;
+    font-size: 25px;
 }
 
 .galleryImages img{
     border: 6px solid black;
 }
 
-.bunsText{
-    text-align: left;
-    margin-top: 5px;
+a{
+    text-decoration: none;
+    color: black;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
 }
 
-a:hover {
+a:hover{
     background-color: yellow;
     font-weight: bold;
 }
 
+#originalDetailPageTitle{
+    text-align: center;
+    margin-top: 40px;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.originalDetailPageImageBox{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.originalDetailPageImage img{
+    border: 6px solid black;
+}
+
+.originalDetailPageTextBox{
+    text-align: left;
+    max-width: 400px;
+    margin: auto;
+    font-size: 35px;
+}
+
+.dropdown{
+    padding-top: 50px;
+}
+
+#glazingDropdownContent{
+    font-size: 35px;
+    width: 400px;
+}
+
+#packsizeDropdownContent{
+    font-size: 35px;
+    width: 400px;
+}
