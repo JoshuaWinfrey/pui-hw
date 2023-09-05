@@ -29,6 +29,16 @@ hr{
     font-size: 26px;
 }
 
+#products{
+    display: block;
+    padding-bottom: 10px;
+}
+
+#cart{
+    display: block;
+    padding-bottom: 30px;
+}
+
 #productGalleryTitle{
     text-align: center;
     margin-top: 50px;
