@@ -53,7 +53,7 @@ hr{
 }
 
 .galleryImages{
-    margin-top: 30px;
+    margin-top: 20px;
     text-align: left;
     display: block;
     font-size: 25px;
@@ -61,6 +61,9 @@ hr{
 
 .galleryImages img{
     border: 6px solid black;
+    margin-top: 30px;
+    width: 400px;
+    height: 400px;
 }
 
 a{
@@ -86,8 +89,10 @@ a:hover{
     text-align: center;
 }
 
-.originalDetailPageImage img{
+#originalDetailPageImage img{
     border: 6px solid black;
+    width: 600px;
+    height: 600px;
 }
 
 .originalDetailPageTextBox{
@@ -151,6 +156,8 @@ button{
 
 .shoppingCartImages img{
     border: 6px solid black;
+    width: 200px;
+    height: 200px;
     display: block;
     margin: auto;
 }

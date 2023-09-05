@@ -6,41 +6,45 @@
   
   <body>
   
-    <div class="title topBox">
+    <section class="title">
       <h1>Shopping Cart</h1>
-    </div>
+    </section>
     
     <hr>
     
-    <div class="logo">
+    <section class="logo">
         <a href="./ProductGallery.html"><img src="../assets/logo/logo-01.svg" alt="Bun Bun Logo"></a>
-    </div>
+    </section>
     
     <hr>
   
     <p>
-      <div id="products" class="headers">
-        <a href="./ProductGallery.html">PRODUCTS</a>
-      </div>
+        <section class="headers">
+            <span id="products">
+              <a href="./ProductGallery.html">PRODUCTS</a>
+            </span>
+              
+            <br>
+      
+            <span id="cart">
+              <a href="./shoppingCart.html">CART</a>
+            </span>
+        </section>
         
-      <div id="cart" class="headers">
-        <a href="./shoppingCart.html">CART</a>
-      </div>
+        <section id="shoppingCartTitle" class="shoppingCartTextBox">
+            Shopping Cart
+        </section>
         
-      <div id="shoppingCartTitle" class="shoppingCartTextBox">
-        Shopping Cart
-      </div>
-        
-      <div class="shoppingCartImageBox">
-        <div class="shoppingCartImages">
-          <img src="../assets/products/original-cinnamon-roll.jpg" alt="Original Cinnamon Roll" width="200px" height="200px">
-          <span class="removeFromCart">Remove</span>
-        </div>
-      </div>
+        <section class="shoppingCartImageBox">
+            <span class="shoppingCartImages">
+                <img src="../assets/products/original-cinnamon-roll.jpg" alt="Original Cinnamon Roll">
+            <span class="removeFromCart">Remove</span>
+            </span>
+        </section>
         
       <br>
 
-      <div class="shoppingCartTextBox originalShoppingCartText">
+      <section class="shoppingCartTextBox originalShoppingCartText">
         Original Cinnamon Roll
         <br>
         Glazing: Keep Original
@@ -48,17 +52,18 @@
         Pack Size: 1
         <br>
         <span class="shoppingCartItemPrice">$ 2.49</span>
-      </div>
+      </section>
 
-      <div class="shoppingCartImageBox">
-        <div class="shoppingCartImages">
-          <img src="../assets/products/double-chocolate-cinnamon-roll.jpg" alt="Double-chocolate Cinnamon Roll" width="200px" height="200px">
+      <section class="shoppingCartImageBox">
+        <span class="shoppingCartImages">
+          <img src="../assets/products/double-chocolate-cinnamon-roll.jpg" alt="Double-chocolate Cinnamon Roll">
           <span class="removeFromCart">Remove</span>
-        </div>
-      </div>
+        </span>
+    </section>
         
       <br>
-      <div class="shoppingCartTextBox doublechocolateShoppingCartText">
+
+      <section class="shoppingCartTextBox doublechocolateShoppingCartText">
         Double Chocolate Cinnamon Roll
         <br>
         Glazing: Sugar milk
@@ -70,7 +75,7 @@
         <hr id="totalPriceLine">
         <span id="cartTotal">Total: $ 29.94</span>
         <button id="checkoutButton" type="button">Checkout</button>
-      </div>
+      </section>
   
     </body>
   </html>
