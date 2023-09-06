@@ -5,14 +5,10 @@ hr{
     max-width: 1200px;
 }
 
-.title{
-    text-align: center;
-    font-size: 50px;
-}
-
 .logo{
     margin: auto;
     max-width: 1200px;
+    padding: 30px;
 }
 
 .logo img{
@@ -31,7 +27,7 @@ hr{
 
 #products{
     display: block;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 #cart{
@@ -75,6 +71,10 @@ a{
 a:hover{
     background-color: yellow;
     font-weight: bold;
+}
+
+.logo a:hover{
+    background-color: white;
 }
 
 #originalDetailPageTitle{
