@@ -48,30 +48,36 @@ hr{
     margin-bottom: 10px;
 }
 
-#productGalleryTitle{
+#pageTitle{
     flex-basis: 100%;
     margin-top: 50px;
     font-size: 35px;
 }
 
-.galleryBox{
-    text-align: center;
-    max-width: 400px;
-    margin: auto;
-}
-
-.galleryImages{
-    margin-top: 20px;
+#galleryImages{
     text-align: left;
-    display: block;
+    display: flex;
     font-size: 25px;
+    flex-wrap: wrap;
+    max-width: 285px;
+    margin-left: 100px;
 }
 
-.galleryImages img{
+#row1{
+    display: flex;
+    gap: 30px;
+}
+
+#row2{
+    display: flex;
+    gap: 30px;
+}
+
+#galleryImages img{
     border: 6px solid black;
-    margin-top: 30px;
-    width: 400px;
-    height: 400px;
+    width: 285px;
+    height: 285px;
+    text-align: left;
 }
 
 a{
