@@ -5,6 +5,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
+/* Header */
 #topBar{
     display: flex;
     align-items: center;
@@ -54,45 +55,66 @@ hr{
     font-size: 35px;
 }
 
-#galleryImages{
-    text-align: left;
-    display: flex;
-    font-size: 25px;
-    flex-wrap: wrap;
-    max-width: 285px;
-    margin-left: 100px;
-}
-
-#row1{
-    display: flex;
-    gap: 30px;
-}
-
-#row2{
-    display: flex;
-    gap: 30px;
-}
-
-#galleryImages img{
-    border: 6px solid black;
-    width: 285px;
-    height: 285px;
-    text-align: left;
-}
-
 a{
     text-decoration: none;
     color: black;
 }
 
-a:hover{
+.logo a:hover{
+    background-color: white;
+}
+
+/* Product Gallery */
+
+
+#galleryImages{
+    text-align: left;
+    display: flex;
+    font-size: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 50px;
+    row-gap: 30px;
+    margin-left: 65px;
+    margin-right: 65px;
+    margin-top: 50px;
+}
+
+#galleryImages img{
+    width: 285px;
+    height: 285px;
+    text-align: left;
+}
+
+.imgBox img{
+    border: 5px solid black;
+}
+
+.imgBox{
+    box-sizing: border-box;
+    padding: 5px;
+    max-width: 305px;
+}
+
+.imgBox:hover{
     background-color: yellow;
     font-weight: bold;
 }
 
-.logo a:hover{
-    background-color: white;
+.imgText{
+    padding-top: 5px;
+    text-decoration: underline;
 }
+
+.imgBox:hover .imgPrice{
+    font-weight: lighter;
+}
+
+.imgPrice{
+    padding-top: 3px;
+}
+
+/* Detail Page*/
 
 #originalDetailPageTitle{
     text-align: center;
@@ -117,6 +139,8 @@ a:hover{
     margin: auto;
     font-size: 35px;
 }
+
+/* Cart */
 
 .dropdown{
     padding-top: 50px;
@@ -167,14 +191,6 @@ button{
 .shoppingCartImageBox{
     margin-top: 50px;
     text-align: center;
-}
-
-.shoppingCartImages img{
-    border: 6px solid black;
-    width: 200px;
-    height: 200px;
-    display: block;
-    margin: auto;
 }
 
 .removeFromCart{
