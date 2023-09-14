@@ -187,9 +187,9 @@ label{
 button{
     background-color: yellow;
     display: inline-block;
-    width: 200px;
-    height: 55px;
-    font-size: 25px;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
     font-weight: bold;
     border: 3px solid black;
 }
@@ -210,60 +210,77 @@ button{
 
 /* Cart */
 
-#shoppingCartTitle{
-    text-align: center;
+.shoppingCartBox{
     margin-top: 50px;
-    font-size: 60px;
-    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin-left: 460px;
+    margin-right: 50px;
+    font-size: 20px;
+    font-weight: 300;
 }
 
-.shoppingCartImageBox{
-    margin-top: 50px;
-    text-align: center;
+.originalCart{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.doubleChocolateCart{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.cartDescription{
+    margin-left: 15px;
+    text-align: left;
 }
 
 .shoppingCartImages img{
-    border: 6px solid black;
+    border: 5px solid black;
     width: 200px;
     height: 200px;
     display: block;
     margin: auto;
 }
 
-.removeFromCart{
+.shoppingCartImages{
     text-decoration: underline;
+    text-decoration-thickness: 1px;
     font-weight: bold;
     display: inline-block;
     padding: 10px;
     font-size: 20px;
-}
-
-.shoppingCartTextBox{
-    text-align: center;
-    max-width: 600px;
-    margin: auto;
-    font-size: 35px;
+    text-align: left;
 }
 
 .shoppingCartItemPrice{
-    font-size: 45px;
     padding-top: 25px;
     padding-bottom: 50px;
-    display: inline-block
+    flex-grow: 1;
+    text-align: right;
 }
 
-#totalPriceLine{
-    max-width: 800px;
-}
-
-#cartTotal{
-    display: inline-block;
-    text-align: center;
+.cartTotal{
+    text-align: right;
     padding: 20px;
-    font-size: 45px;
+    justify-content: space-between;
 }
 
-#checkoutButton{
-    display: block;
-    margin: auto
+.checkoutButton{
+    text-align: right;
 }
+
+.checkout{
+    display: flex;
+    align-items: center;
+    margin-left: 230px;
+}
+
+.cartPrice{
+    text-align: right;
+    flex-grow: 1;
+}
+
