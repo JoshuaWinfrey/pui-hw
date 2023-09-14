@@ -11,7 +11,7 @@
     align-items: center;
     justify-content: flex-start;
     font-size: 25px;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 hr{
@@ -217,8 +217,8 @@ button{
     flex-direction: column;
     margin-left: 460px;
     margin-right: 50px;
-    font-size: 20px;
-    font-weight: 300;
+    font-size: 22px;
+    font-weight: 500;
 }
 
 .originalCart{
