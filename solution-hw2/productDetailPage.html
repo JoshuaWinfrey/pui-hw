@@ -9,70 +9,68 @@
     <section id="topBar">
       <div class="logo">
         <a href="./ProductGallery.html"><img src="../assets/logo/logo-01.svg" alt="Bun Bun Logo" width="400px"></a>
-        <!-- specifying width (and in some cases, height) in html and css per the in-class instructions -->
       </div>
       
-        <div class="headers">
-          <span id="products">
-            <a href="./ProductGallery.html">PRODUCTS</a>
-          </span>
-      
-          <span id="cart">
-            <a href="./shoppingCart.html">CART</a>
-          </span>
-          <hr>
-          <span id="pageTitle">
-            Original cinnamon roll
-          </span>
+      <div class="headers">
+        <div id="products" class="highlightedHeaders">
+          <a href="./ProductGallery.html">PRODUCTS</a>
         </div>
-  
+      
+        <div id="cart" class="highlightedHeaders">
+          <a href="./shoppingCart.html">CART</a>
+        </div>
+          
+        <hr>
+        
+        <div id="pageTitle">
+          Original cinnamon roll
+        </div>
+      </div>
     </section>
-  
-    <p>
-     
-      <section class="originalDetailPageImageBox">
-        <span id="originalDetailPageImage">
-          <img src="../assets/products/original-cinnamon-roll.jpg" alt="Original Cinnamon Roll">
-        </span>
-      </section>
+
+    <section id="originalDetailPage">
+      <div id="originalDetailPageImage">
+        <img src="../assets/products/original-cinnamon-roll.jpg" alt="Original Cinnamon Roll" width="600px" height="600px">
+      </div>
         
       <br>
       
-      <div class="originalDetailPageTextBox" id="customizeText">
-      Customize our delicious, hand-made cinnamon roll to your liking!
-      </div>
+      <div id="originalDetailPageText">
+        <div id="customizeText">
+          Customize our delicious, hand-made cinnamon roll to your liking!
+        </div>
 
-    </p>
+        <div class="dropdown">
+          <div id="glazingDropdown">
+          <label for="glazingDropdownContent">Glazing:</label>
+            <select name="glazingDropdownContent" id="glazingDropdownContent">
+              <option value="Keep original">Keep original</option>
+              <option value="Sugar milk">Sugar milk</option>
+              <option value="Vanilla milk">Vanilla milk</option>
+              <option value="Double chocolate">Double chocolate</option>
+            </select>
+          </div>
+            <br>
 
-    <p>
-      <section class="dropdown originalDetailPageTextBox">
-        <label for="glazingDropdownContent">Glazing:</label>
-        <br>
-          <select name="glazingDropdownContent" id="glazingDropdownContent">
-            <option value="Keep original">Keep original</option>
-            <option value="Sugar milk">Sugar milk</option>
-            <option value="Vanilla milk">Vanilla milk</option>
-            <option value="Double chocolate">Double chocolate</option>
-          </select>
-          <br>
-          <br>
-
-        <label for="packsizeDropdownContent">Pack size:</label>
-        <br>
-          <select name="packsizeDropdownContent" id="packsizeDropdownContent">
-            <option value="1">1</option>
-            <option value="3">3</option>
-            <option value="6">6</option>
-            <option value="12">12</option>
-          </select>
-      </secion>
+          <div id="packsizeDropdown">
+          <label for="packsizeDropdownContent">Pack size:</label>
+            <select name="packsizeDropdownContent" id="packsizeDropdownContent">
+              <option value="1">1</option>
+              <option value="3">3</option>
+              <option value="6">6</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+        </div>
         
-      <section class="addToCart originalDetailPageTextBox">
-        <span id="basketPrice">$ 2.49</span>
-        <button id="addToCartButton" type="button">Add to Cart</button>
-      </section>
-
-    </p>
+        <div id="addToCart">
+          <span id="addToCartText">
+            $ 2.49
+          </span>
+          <button id="addToCartButton" type="button">Add to Cart</button>
+        </div>
+      </div>
+    </section>
   
     </body>
   </html>
