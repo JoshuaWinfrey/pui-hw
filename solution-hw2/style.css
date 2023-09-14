@@ -72,11 +72,20 @@ a{
     font-size: 25px;
     flex-wrap: wrap;
     justify-content: center;
-    column-gap: 50px;
     row-gap: 30px;
     margin-left: 65px;
     margin-right: 65px;
     margin-top: 50px;
+}
+
+.galleryRow1{
+    display: flex;
+    column-gap: 50px;
+}
+
+.galleryRow2{
+    display: flex;
+    column-gap: 50px;
 }
 
 #galleryImages img{
