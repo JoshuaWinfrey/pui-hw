@@ -52,10 +52,8 @@ function glazingChange()
     {
         if(this.value === allGlazing[i].flavor)
         {
-            console.log(allGlazing[i]);
             glazingTotal = glazingTotal + allGlazing[i].price;
             cartTotal = glazingTotal * priceMultiplier;
-            console.log(cartTotal);
         }
     }
     cartTotalElement.innerText = '$ ' + (Math.round(cartTotal*100)/100).toFixed(2);
@@ -68,10 +66,8 @@ function packsizeChange()
     {
         if(this.value == allPacksize[i].quantity)
         {
-            console.log(allPacksize[i]);
             priceMultiplier = allPacksize[i].adaption;
             cartTotal = glazingTotal * priceMultiplier;
-            console.log(cartTotal);
         }
     }
     cartTotalElement.innerText = '$ ' + (Math.round(cartTotal*100)/100).toFixed(2);
