@@ -58,7 +58,7 @@ function glazingChange()
             console.log(cartTotal);
         }
     }
-    cartTotalElement.innerText = '$ ' + (Math.round(cartTotal*100)/100);
+    cartTotalElement.innerText = '$ ' + (Math.round(cartTotal*100)/100).toFixed(2);
 }
 
 function packsizeChange() 
