@@ -1,7 +1,7 @@
 
 let glazing = document.getElementById('glazingDropdownContent');
-
 let packsize = document.getElementById('packsizeDropdownContent');
+let cartTotalElement = document.getElementById('addToCartText');
 
 let glazingTotal = 2.49;
 let priceMultiplier = 1;
@@ -45,10 +45,9 @@ let allPacksize = [
     }
 ]
 
-function glazingPrice() 
+function glazingChange() 
 {
     glazingTotal = 2.49;
-    console.log('You selected ' + this.value);
     for (let i=0; i < allGlazing.length; i++)
     {
         if(this.value === allGlazing[i].flavor)
@@ -59,13 +58,12 @@ function glazingPrice()
             console.log(cartTotal);
         }
     }
-    return cartTotal;
+    cartTotalElement.innerText = '$ ' + (Math.round(cartTotal*100)/100);
 }
 
-function packsizePrice() 
+function packsizeChange() 
 {
     priceMultiplier = 1;
-    console.log('You selected ' + this.value + ' rolls');
     for (let i=0; i<allPacksize.length; i++)
     {
         if(this.value == allPacksize[i].quantity)
@@ -76,8 +74,8 @@ function packsizePrice()
             console.log(cartTotal);
         }
     }
-    return cartTotal;
+    cartTotalElement.innerText = '$ ' + (Math.round(cartTotal*100)/100).toFixed(2);
 }
 
-glazing.addEventListener('change', glazingPrice);
-packsize.addEventListener('change', packsizePrice);
+glazing.addEventListener('change', glazingChange);
+packsize.addEventListener('change', packsizeChange);
