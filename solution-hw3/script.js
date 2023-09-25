@@ -1,11 +1,16 @@
 
+//assigning html variables
+
 let glazing = document.getElementById('glazingDropdownContent');
 let packsize = document.getElementById('packsizeDropdownContent');
 let cartTotalElement = document.getElementById('addToCartText');
 
-let glazingTotal = 2.49;
-let priceMultiplier = 1;
-let cartTotal = glazingTotal * priceMultiplier;
+
+let glazingTotal = 2.49; //setting a baseline for the glazing price
+let priceMultiplier = 1; //setting a baseline for the packsize multiplier
+let cartTotal = glazingTotal * priceMultiplier; //creating formula for cart total
+
+//glazing array
 
 let allGlazing = [
     {
@@ -18,14 +23,15 @@ let allGlazing = [
     },
     {
         flavor: 'Vanilla milk',
-        price: 0.5,
+        price: 0.50,
     },
     {
         flavor: 'Double chocolate',
-        price: 1.5,
+        price: 1.50,
     }
 ]
 
+//Pack size array
 let allPacksize = [
     {
         quantity: 1,
@@ -45,33 +51,38 @@ let allPacksize = [
     }
 ]
 
+// adding Glazing options to select
+for (let i = 0; i<allGlazing.length; i++)
+{
+var option = document.createElement('option');
+option.text = allGlazing[i].flavor;
+option.value = allGlazing[i].price;
+glazing.add(option);
+}
+
+//adding Pack size options to select
+for (let i = 0; i<allPacksize.length; i++)
+{
+var option = document.createElement('option');
+option.text = allPacksize[i].quantity;
+option.value = allPacksize[i].adaption;
+packsize.add(option);
+}
+
 function glazingChange() 
 {
-    glazingTotal = 2.49;
-    for (let i=0; i < allGlazing.length; i++)
-    {
-        if(this.value === allGlazing[i].flavor)
-        {
-            glazingTotal = glazingTotal + allGlazing[i].price;
-            cartTotal = glazingTotal * priceMultiplier;
-        }
-    }
-    cartTotalElement.innerText = '$ ' + (Math.round(cartTotal*100)/100).toFixed(2);
+    glazingTotal = 2.49; // resetting the base price to 2.49
+    glazingTotal = glazingTotal + parseFloat(this.value); //adding additional glazing price
+    cartTotal = glazingTotal * priceMultiplier; //multiplying glazing price by packsize adaption for cart total
+    cartTotalElement.innerText = '$ ' + (Math.round(cartTotal*100)/100).toFixed(2); //changing cart price in html to 2 decimal places
 }
 
 function packsizeChange() 
 {
-    priceMultiplier = 1;
-    for (let i=0; i<allPacksize.length; i++)
-    {
-        if(this.value == allPacksize[i].quantity)
-        {
-            priceMultiplier = allPacksize[i].adaption;
-            cartTotal = glazingTotal * priceMultiplier;
-        }
-    }
-    cartTotalElement.innerText = '$ ' + (Math.round(cartTotal*100)/100).toFixed(2);
+    priceMultiplier = this.value; //setting the packsize adaption as the price multiplier
+    cartTotal = glazingTotal * priceMultiplier; //multiplying the current glazing price by the multiplier for cart total
+    cartTotalElement.innerText = '$ ' + (Math.round(cartTotal*100)/100).toFixed(2); //changing cart price in html to 2 decimal places
 }
 
-glazing.addEventListener('change', glazingChange);
-packsize.addEventListener('change', packsizeChange);
+glazing.addEventListener('change', glazingChange); //adding glazing change event listener
+packsize.addEventListener('change', packsizeChange); //adding packsize change event listener
