@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8">
+  <title>Bun Bun</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="rollsData.js"></script>
+  <script defer src="script.js"></script>
+  
+  <body>
+    
+    <section id="topBar">
+      <div class="logo">
+        <a href="./ProductGallery.html"><img src="../assets/logo/logo-01.svg" alt="Bun Bun Logo" width="400px"></a>
+      </div>
+      
+      <div class="headers">
+        <div id="products" class="highlightedHeaders">
+          <a href="./ProductGallery.html">PRODUCTS</a>
+        </div>
+      
+        <div id="cart" class="highlightedHeaders">
+          <a href="./shoppingCart.html">CART</a>
+        </div>
+          
+        <hr>
+        
+        <div class="pageTitle" id="detailPageTitle">
+          Original cinnamon roll
+        </div>
+      </div>
+    </section>
+
+    <section id="originalDetailPage">
+      <div id="originalDetailPageImage">
+        <img src="../assets/products/original-cinnamon-roll.jpg" alt="Original Cinnamon Roll" width="600px" height="600px">
+      </div>
+        
+      <br>
+      
+      <div id="originalDetailPageText">
+        <div id="customizeText">
+          Customize our delicious, hand-made cinnamon roll to your liking!
+        </div>
+
+        <div class="dropdown">
+          <div id="glazingDropdown">
+          <label for="glazingDropdownContent">Glazing:</label>
+            <select name="glazingDropdownContent" id="glazingDropdownContent">
+              <!--
+              <option value="Keep original">Keep original</option>
+              <option value="Sugar milk">Sugar milk</option>
+              <option value="Vanilla milk">Vanilla milk</option>
+              <option value="Double chocolate">Double chocolate</option>
+              -->
+            </select>
+          </div>
+            <br>
+
+          <div id="packsizeDropdown">
+          <label for="packsizeDropdownContent">Pack size:</label>
+            <select name="packsizeDropdownContent" id="packsizeDropdownContent">
+            <!--
+              <option value="1">1</option>
+              <option value="3">3</option>
+              <option value="6">6</option>
+              <option value="12">12</option>
+              -->
+            </select>
+          </div>
+        </div>
+        
+        <div id="addToCart">
+          <span id="addToCartText">
+            $ 2.49
+          </span>
+          <button id="addToCartButton" type="button">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+  
+    </body>
+  </html>
+  
