@@ -36,10 +36,6 @@ const rollType = params.get('roll');
 let rollPrice = rolls[rollType].basePrice;
 let imagePath = rolls[rollType].imageFile;
 
-console.log(rollType);
-console.log(rollPrice);
-console.log(imagePath);
-
 
 
 

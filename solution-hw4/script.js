@@ -4,12 +4,15 @@
 let glazing = document.getElementById('glazingDropdownContent');
 let packsize = document.getElementById('packsizeDropdownContent');
 let cartTotalElement = document.getElementById('addToCartText');
-let cartTitle = document.getElementById('pageTitle');
 
 
-let glazingTotal = 2.49; //setting a baseline for the glazing price
+
+let glazingTotal = rollPrice; //setting a baseline for the glazing price
 let priceMultiplier = 1; //setting a baseline for the packsize multiplier
 let cartTotal = glazingTotal * priceMultiplier; //creating formula for cart total
+
+//setting base price on detail page
+addToCartText.innerText = '$ ' + rollPrice;
 
 //glazing array
 
@@ -72,7 +75,7 @@ packsize.add(option);
 
 function glazingChange() 
 {
-    glazingTotal = 2.49; // resetting the base price to 2.49
+    glazingTotal = rollPrice; // resetting the base price to that of the roll
     glazingTotal = glazingTotal + parseFloat(this.value); //adding additional glazing price
     cartTotal = glazingTotal * priceMultiplier; //multiplying glazing price by packsize adaption for cart total
     cartTotalElement.innerText = '$ ' + (Math.round(cartTotal*100)/100).toFixed(2); //changing cart price in html to 2 decimal places
@@ -87,6 +90,18 @@ function packsizeChange()
 
 glazing.addEventListener('change', glazingChange); //adding glazing change event listener
 packsize.addEventListener('change', packsizeChange); //adding packsize change event listener
+
+
+
+// HW4
+let detailPageTitle = document.getElementById('detailPageTitle');
+let detailPageImage = document.getElementById('detailPageImage');
+let newImagePath = "../assets/products/" + imagePath;
+let rollTail = " Cinnamon Roll";
+
+detailPageTitle.innerText = rollType + rollTail;
+detailPageImage.src = newImagePath;
+
 
 
 
