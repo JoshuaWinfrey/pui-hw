@@ -25,16 +25,7 @@ const rolls = {
     }    
 };
 
-//empty array for cart
-cart = [];
 
-//setting base values then getting roll type from URL
-const queryString = window.location.search;
-const params = new URLSearchParams(queryString);
-
-rollType = params.get('roll');
-rollPrice = rolls[rollType].basePrice;
-imagePath = rolls[rollType].imageFile;
 
 
 

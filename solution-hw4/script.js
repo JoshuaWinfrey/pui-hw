@@ -1,12 +1,20 @@
 
+//empty array for cart
+cart = [];
+
+//setting base values then getting roll type from URL
+const queryString = window.location.search;
+const params = new URLSearchParams(queryString);
+
+rollType = params.get('roll');
+rollPrice = rolls[rollType].basePrice;
+imagePath = rolls[rollType].imageFile;
+
 //assigning html variables
 
 let glazing = document.getElementById('glazingDropdownContent');
 let packsize = document.getElementById('packsizeDropdownContent');
 let cartTotalElement = document.getElementById('addToCartText');
-
-
-
 
 let glazingTotal = rollPrice; //setting a baseline for the glazing + roll price
 let priceMultiplier = 1; //setting a baseline for the packsize multiplier
@@ -95,6 +103,8 @@ packsize.addEventListener('change', packsizeChange); //adding packsize change ev
 
 
 // HW4
+
+
 let detailPageTitle = document.getElementById('detailPageTitle');
 let detailPageImage = document.getElementById('detailPageImage');
 let newImagePath = "../assets/products/" + imagePath;
@@ -118,7 +128,6 @@ function pushToCart() {
 
     let newRoll = new Roll(rollType, glazing.options[glazing.selectedIndex].text, packsize.options[packsize.selectedIndex].text, rollPrice);
     cart.push(newRoll);
-    console.log(newRoll);
     console.log(cart);
 }
 
