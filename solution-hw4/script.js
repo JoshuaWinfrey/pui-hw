@@ -7,7 +7,8 @@ let cartTotalElement = document.getElementById('addToCartText');
 
 
 
-let glazingTotal = rollPrice; //setting a baseline for the glazing price
+
+let glazingTotal = rollPrice; //setting a baseline for the glazing + roll price
 let priceMultiplier = 1; //setting a baseline for the packsize multiplier
 let cartTotal = glazingTotal * priceMultiplier; //creating formula for cart total
 
@@ -101,6 +102,33 @@ let rollTail = " Cinnamon Roll";
 
 detailPageTitle.innerText = rollType + rollTail;
 detailPageImage.src = newImagePath;
+
+let atcButton = document.getElementById('addToCartButton');
+
+class Roll {
+    constructor(rollType, glazing, packsize, rollPrice) {
+        this.rollType = rollType;
+        this.glazing = glazing;
+        this.packsize = packsize;
+        this.rollPrice = rollPrice;
+    }
+}
+
+function pushToCart() {
+
+    let newRoll = new Roll(rollType, glazing.options[glazing.selectedIndex].text, packsize.options[packsize.selectedIndex].text, rollPrice);
+    cart.push(newRoll);
+    console.log(newRoll);
+    console.log(cart);
+}
+
+
+atcButton.addEventListener('click', pushToCart);
+
+
+
+
+
 
 
 
