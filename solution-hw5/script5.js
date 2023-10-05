@@ -27,7 +27,6 @@ function createElement(newRoll) {
     newRoll.element = clone.querySelector('.cartItem');
 
     const btnDelete = newRoll.element.querySelector('#cartDelete');
-    console.log(btnDelete);
     btnDelete.addEventListener('click', () => {
       deleteRoll(newRoll);
     });
@@ -54,7 +53,7 @@ function createElement(newRoll) {
     cartRollTitleElement.innerHTML = newRoll.rollType + " Cinnamon Roll";
     cartRollGlazingElement.innerHTML = "Glazing: " + newRoll.glazing;
     cartRollPackSizeElement.innerHTML = "Pack Size: " + newRoll.packsize;
-    cartRollPriceElement.innerHTML = 3.99;
+    cartRollPriceElement.innerHTML = "$ "+ (((newRoll.rollPrice) + (getPriceByFlavor(newRoll.glazing))) * (getPacksizeAdaption(newRoll.packsize))).toFixed(2);
   }
   
   function deleteRoll(newRoll) {
@@ -64,10 +63,21 @@ function createElement(newRoll) {
     shoppingCart.delete(newRoll);
   }
   
-  let roll1 = addNewRoll("Original","Sugar Milk",1,2.49);
-  let roll2 = addNewRoll("Walnut","Vanilla Milk",12,3.49);
-  let roll3 = addNewRoll("Raisin","Sugar Milk",3,2.99);
-  let roll4 = addNewRoll("Apple","Sugar Milk",3,3.49);
+  function getPriceByFlavor(flavor) {
+    const glazing = allGlazing.find(item => item.flavor === flavor);
+    return glazing.price;
+  }
+
+  function getPacksizeAdaption(quantity) {
+    const packsize = allPacksize.find(item => item.quantity === quantity);
+    return packsize.adaption;
+  }
+
+
+  let roll1 = addNewRoll("Apple","Sugar milk",3,3.49);
+  let roll2 = addNewRoll("Raisin","Sugar milk",3,2.99);
+  let roll3 = addNewRoll("Walnut","Vanilla milk",12,3.49);
+  let roll4 = addNewRoll("Original","Sugar milk",1,2.49);
 
   for (const newRoll of shoppingCart) {
     console.log(newRoll);
