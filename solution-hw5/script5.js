@@ -18,37 +18,29 @@ function addNewRoll(rollType, glazing, packsize, rollPrice){
 }
 
 function createElement(newRoll) {
-    // make a clone of the notecard template
     const template = document.querySelector('#cart-template');
     const clone = template.content.cloneNode(true);
-    
-    // connect this clone to our notecard.element
-    // from this point we only need to refer to notecard.element
+
     newRoll.element = clone.querySelector('.cartItem');
 
     const btnDelete = newRoll.element.querySelector('#cartDelete');
     btnDelete.addEventListener('click', () => {
       deleteRoll(newRoll);
     });
-    
-    // add the notecard clone to the DOM
-    // find the notecard parent (#notecard-list) and add our notecard as its child
+
     const shoppingCartListElement = document.querySelector('.shoppingCartBox');
     shoppingCartListElement.prepend(newRoll.element);
-    
-    // populate the notecard clone with the actual notecard content
+
     updateElement(newRoll);
   }
   
   function updateElement(newRoll) {
-    // get the HTML elements that need updating
     let cartRollImageElement = newRoll.element.querySelector('.shoppingCartImages img');
     let cartRollTitleElement = newRoll.element.querySelector('.cartItemTitle');
     let cartRollGlazingElement = newRoll.element.querySelector('.cartItemGlazing');
     let cartRollPackSizeElement = newRoll.element.querySelector('.cartItemPackSize');
     let cartRollPriceElement = newRoll.element.querySelector('.cartItemPrice');
     
-    // copy our notecard content over to the corresponding HTML elements
     cartRollImageElement.src = "../assets/products/" + newRoll.rollType.toLowerCase() + "-cinnamon-roll.jpg";
     cartRollTitleElement.innerHTML = newRoll.rollType + " Cinnamon Roll";
     cartRollGlazingElement.innerHTML = "Glazing: " + newRoll.glazing;
@@ -57,9 +49,7 @@ function createElement(newRoll) {
   }
   
   function deleteRoll(newRoll) {
-    // remove the notecard DOM object from the UI
     newRoll.element.remove();
-    // remove the actual Notecard object from our set of notecards
     shoppingCart.delete(newRoll);
   }
   
