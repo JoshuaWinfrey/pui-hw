@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8">
+  <title>Bun Bun</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="rollsData.js"></script>
+  <script defer src="script5.js"></script>
+
+  
+  <body>
+    <section id="topBar">
+      <div class="logo">
+        <a href="./ProductGallery.html"><img src="../assets/logo/logo-01.svg" alt="Bun Bun Logo" width="400px"></a>
+      </div>
+      
+      <div class="headers">
+        <div id="products" class="highlightedHeaders">
+          <a href="./ProductGallery.html">PRODUCTS</a>
+        </div>
+      
+        <div id="cart" class="highlightedHeaders">
+          <a href="./shoppingCart.html">CART</a>
+        </div>
+          
+        <hr>
+        
+        <div class="pageTitle" id="cartTitle">
+          Shopping cart
+        </div>
+      </div>
+    </section>
+
+      <section class="shoppingCartBox">
+        <template id="cart-template">
+        <div class="cartItem">
+            <div class="shoppingCartImages">
+                <img src="../assets/products/original-cinnamon-roll.jpg" alt="Original Cinnamon Roll" width="200px" height="200px">
+                <div id="cartDelete">
+                  Remove
+                </div>
+            </div>
+            <div class="cartDescription">
+              <div class="cartItemTitle">
+              Placeholder Title
+              </div>
+              <div class="cartItemGlazing">
+              Glazing: tbd
+              </div>
+              <div class="cartItemPackSize">
+              Pack Size: tbd
+              </div>
+              <div class="cartItemPrice">
+              $ 2.49
+              </div>
+            </div>
+        </div>
+      </template>
+      
+        
+        <hr id="totalPriceLine">
+        <div class="checkout">
+          <div class="cartTotal">
+            Total
+          </div>
+          <div class="cartPrice">
+          $ 29.94
+          </div>
+        </div>
+
+        <div class="checkoutButton">
+        <button type="button">Checkout</button>
+        </div>
+        
+      </section> 
+    </body>
+</html>
+  
