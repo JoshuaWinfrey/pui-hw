@@ -1,10 +1,28 @@
 
+const glazingDictionary =
+{
+  'Original': 0,
+  'Sugar milk': 0,
+  'Vanilla milk': 0.5,
+  'Double chocolate': 1.5
+};
+
+const packsizeDictionary =
+{
+  '1':1,
+  '3':3,
+  '6':5,
+  '12':10
+};
+
+
 class Roll {
     constructor(rollType, glazing, packsize, rollPrice) {
         this.rollType = rollType;
         this.glazing = glazing;
         this.packsize = packsize;
         this.rollPrice = rollPrice;
+        this.totalPrice = ((rollPrice + glazingDictionary[glazing])*packsizeDictionary[packsize]);
     }
 }
 
@@ -40,17 +58,21 @@ function createElement(newRoll) {
     let cartRollGlazingElement = newRoll.element.querySelector('.cartItemGlazing');
     let cartRollPackSizeElement = newRoll.element.querySelector('.cartItemPackSize');
     let cartRollPriceElement = newRoll.element.querySelector('.cartItemPrice');
+    let cartTotalPriceElement = document.querySelector('.cartPrice');
+    let totalCartPrice = getTotalCart();
     
     cartRollImageElement.src = "../assets/products/" + newRoll.rollType.toLowerCase() + "-cinnamon-roll.jpg";
     cartRollTitleElement.innerHTML = newRoll.rollType + " Cinnamon Roll";
     cartRollGlazingElement.innerHTML = "Glazing: " + newRoll.glazing;
     cartRollPackSizeElement.innerHTML = "Pack Size: " + newRoll.packsize;
-    cartRollPriceElement.innerHTML = "$ "+ (((newRoll.rollPrice) + (getPriceByFlavor(newRoll.glazing))) * (getPacksizeAdaption(newRoll.packsize))).toFixed(2);
+    cartRollPriceElement.innerHTML = '$ ' + newRoll.totalPrice.toFixed(2);
+    cartTotalPriceElement.innerHTML = totalCartPrice;
   }
   
   function deleteRoll(newRoll) {
     newRoll.element.remove();
     shoppingCart.delete(newRoll);
+    updateElement(newRoll);
   }
   
   function getPriceByFlavor(flavor) {
@@ -61,6 +83,14 @@ function createElement(newRoll) {
   function getPacksizeAdaption(quantity) {
     const packsize = allPacksize.find(item => item.quantity === quantity);
     return packsize.adaption;
+  }
+
+  function getTotalCart(){
+    let totalCart = 0;
+    for (const item of shoppingCart){
+      totalCart += item.totalPrice;
+    }
+    return '$ ' + totalCart.toFixed(2);
   }
 
 
