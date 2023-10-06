@@ -239,7 +239,7 @@ button{
 .cartDescription{
     margin-left: 15px;
     text-align: left;
-    
+
 }
 
 .shoppingCartImages img{
@@ -289,3 +289,7 @@ button{
     padding-top: 20px;
 }
 
+.cartPrice{
+    text-align: right;
+    flex-grow: 1;
+}
