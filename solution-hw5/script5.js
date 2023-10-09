@@ -1,4 +1,5 @@
 
+//making a glazing dictionary for easier access
 const glazingDictionary =
 {
   'Original': 0,
@@ -7,6 +8,7 @@ const glazingDictionary =
   'Double chocolate': 1.5
 };
 
+//making a packsize dictionary for easier access
 const packsizeDictionary =
 {
   '1':1,
@@ -16,6 +18,7 @@ const packsizeDictionary =
 };
 
 
+//creating a class for Roll
 class Roll {
     constructor(rollType, glazing, packsize, rollPrice) {
         this.rollType = rollType;
@@ -26,8 +29,11 @@ class Roll {
     }
 }
 
+//creating an empty cart Set
 const shoppingCart = new Set();
 
+
+//function for adding a new roll to the array
 function addNewRoll(rollType, glazing, packsize, rollPrice){
     const newRoll = new Roll(rollType, glazing, packsize, rollPrice);
     shoppingCart.add(newRoll);
@@ -35,6 +41,7 @@ function addNewRoll(rollType, glazing, packsize, rollPrice){
     return newRoll;
 }
 
+//function for creating the HTML element
 function createElement(newRoll) {
     const template = document.querySelector('#cart-template');
     const clone = template.content.cloneNode(true);
@@ -51,8 +58,9 @@ function createElement(newRoll) {
 
     updateElement(newRoll);
   }
-  
-  function updateElement(newRoll) {
+
+//function for updating the HTML
+function updateElement(newRoll) {
     let cartRollImageElement = newRoll.element.querySelector('.shoppingCartImages img');
     let cartRollTitleElement = newRoll.element.querySelector('.cartItemTitle');
     let cartRollGlazingElement = newRoll.element.querySelector('.cartItemGlazing');
@@ -68,24 +76,28 @@ function createElement(newRoll) {
     cartRollPriceElement.innerHTML = '$ ' + newRoll.totalPrice.toFixed(2);
     cartTotalPriceElement.innerHTML = totalCartPrice;
   }
-  
-  function deleteRoll(newRoll) {
+
+//function for removing the roll
+function deleteRoll(newRoll) {
     newRoll.element.remove();
     shoppingCart.delete(newRoll);
     updateElement(newRoll);
   }
-  
-  function getPriceByFlavor(flavor) {
+
+//function for finding glazing price based on flavor
+function getPriceByFlavor(flavor) {
     const glazing = allGlazing.find(item => item.flavor === flavor);
     return glazing.price;
   }
 
-  function getPacksizeAdaption(quantity) {
+//function for finding packsize adaption based on quantity
+function getPacksizeAdaption(quantity) {
     const packsize = allPacksize.find(item => item.quantity === quantity);
     return packsize.adaption;
   }
 
-  function getTotalCart(){
+//function for summing the total cart price
+function getTotalCart(){
     let totalCart = 0;
     for (const item of shoppingCart){
       totalCart += item.totalPrice;
@@ -93,12 +105,13 @@ function createElement(newRoll) {
     return '$ ' + totalCart.toFixed(2);
   }
 
-
+//creating the 4 rolls given
   let roll1 = addNewRoll("Apple","Sugar milk",3,3.49);
   let roll2 = addNewRoll("Raisin","Sugar milk",3,2.99);
   let roll3 = addNewRoll("Walnut","Vanilla milk",12,3.49);
   let roll4 = addNewRoll("Original","Sugar milk",1,2.49);
 
+//printing each added roll to the console for validation
   for (const newRoll of shoppingCart) {
     console.log(newRoll);
   }
