@@ -1,6 +1,7 @@
 
 //empty array for cart
-cart = [];
+
+let shoppingCart = [];
 
 //setting base values then getting roll type from URL
 const queryString = window.location.search;
@@ -86,13 +87,11 @@ class Roll {
 
 function pushToCart() {
 
+    const existingCart = JSON.parse(localStorage.getItem('cart')) || [];
     let newRoll = new Roll(rollType, glazing.options[glazing.selectedIndex].text, packsize.options[packsize.selectedIndex].text, rollPrice);
-    cart.push(newRoll);
-    console.log(cart);
-    localStorage.setItem('rollType',newRoll.rollType);
-    localStorage.setItem('glazing',newRoll.glazing);
-    localStorage.setItem('packsize',newRoll.packsize);
-    parseFloat(localStorage.setItem('rollPrice',newRoll.rollPrice));
+    existingCart.push(newRoll);
+    console.log(shoppingCart);
+    localStorage.setItem('cart', JSON.stringify(existingCart));
 }
 
 

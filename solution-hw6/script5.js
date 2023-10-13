@@ -53,10 +53,10 @@ function createElement(newRoll) {
     const clone = template.content.cloneNode(true);
 
     newRoll.element = clone.querySelector('.cartItem');
-
     const btnDelete = newRoll.element.querySelector('#cartDelete');
     btnDelete.addEventListener('click', () => {
       deleteRoll(newRoll);
+      
     });
 
     const shoppingCartListElement = document.querySelector('.shoppingCartBox');
@@ -88,6 +88,8 @@ function deleteRoll(newRoll) {
     newRoll.element.remove();
     shoppingCart.delete(newRoll);
     updateElement(newRoll);
+    const updatedCartArray = Array.from(shoppingCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCartArray));
   }
 
 //function for finding glazing price based on flavor
@@ -119,8 +121,19 @@ function getTotalCart(){
   let roll4 = addNewRoll("Original","Sugar milk",1,2.49);
 */
 
+function retrieveFromLocalStorage(){
+  const cartString = localStorage.getItem('cart');
+  const storedCart = JSON.parse(cartString);
+  shoppingCart.clear();
 
-addNewRoll(localStorage.getItem('rollType'),localStorage.getItem('glazing'),localStorage.getItem('packsize'),parseFloat(localStorage.getItem('rollPrice')));
+  for(let i=0; i<storedCart.length; i++){
+    const rollItem = storedCart[i];
+    addNewRoll(rollItem.rollType, rollItem.glazing, rollItem.packsize, rollItem.rollPrice);
+  }
+}
+
+retrieveFromLocalStorage();
+
 
 //printing each added roll to the console for validation
   for (const newRoll of shoppingCart) {
