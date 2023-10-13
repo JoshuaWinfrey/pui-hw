@@ -48,7 +48,7 @@ console.log(rectangle1.perimeter());
 /* question 3 */
 
 /* question 4 */
-/*
+
 class BankAccount{
     constructor(accountNumber, accountHolder, initialBalance){
         this.accountNumber = accountNumber;
@@ -71,12 +71,7 @@ class BankAccount{
         }
     }
     getAccountInfo(){
-        const AccountInfo = {
-            AccountNumber: this.accountNumber,
-            AccountHolder: this.accountHolder,
-            Balance: this.balance
-        };
-        return AccountInfo;
+        return ('Account Number:',this.accountNumber,', Account Holder:',this.accountHolder);
     }
 }
 
@@ -87,7 +82,7 @@ let BankAccount2 = new BankAccount(22222, 'Sally May',3300);
 
 console.log(BankAccount1.getAccountInfo());
 console.log(BankAccount2.getAccountInfo());
-*/
+
 
 /* question 5*/
 /*
