@@ -236,6 +236,10 @@ button{
     justify-content: flex-start;
 }
 
+#cart-template{
+    justify-content: flex-end;
+}
+
 .cartDescription{
     margin-left: 15px;
     text-align: left;
